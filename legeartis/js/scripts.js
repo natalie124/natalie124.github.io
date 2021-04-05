@@ -37,15 +37,7 @@ $('document').ready(function() {
         $(this).addClass('current');
 
         var clicked = $(this).find('a:first').attr('href');
-        $('.landing-testimontial-carousel').slick('unslick');
         $('.simple_tabs_container div.tab-block' + clicked).fadeIn('slow');
-        $('.landing-testimontial-carousel').slick({
-            prevArrow: '<button type="button" class="slick-prev slick-prev--arrow slick-prev--light"></button>',
-            nextArrow: '<button type="button" class="slick-next slick-next--arrow slick-next--light"></button>',
-            dots: false,
-            adaptiveHeight: true
-        });
-
         return false;
     });
 

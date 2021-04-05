@@ -33,6 +33,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+$(document).ready(function() {
+    /*-----------------------------------
+     Scroll to anchor
+  -----------------------------------*/
+    $('._anchor-link').click(function(e) {
+
+        e.preventDefault();
+        var _href = $(this).attr('href');
+        var selector = '._anchor[data-anchor=' + _href + ']';
+        var toElem = $(selector);
+        var toTop = toElem.offset().top;
+        $("html, body").animate({ scrollTop: toTop });
+        return false;
+    });
+});
+
 // полифил для remove
 (function() {
     var arr = [window.Element, window.CharacterData, window.DocumentType];
