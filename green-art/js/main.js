@@ -56,6 +56,8 @@ $(document).ready(function() {
             slidesPerGroup: 3,
             observer: true,
             observeParents: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
             pagination: {
                 el: $(this).find('.slider-cards__pagination')[0],
                 type: 'bullets',
