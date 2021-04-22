@@ -54,6 +54,8 @@ $(document).ready(function() {
         var swiper = new Swiper($(this).find('.slider-cards__container')[0], {
             slidesPerView: 3,
             slidesPerGroup: 3,
+            observer: true,
+            observeParents: true,
             pagination: {
                 el: $(this).find('.slider-cards__pagination')[0],
                 type: 'bullets',
@@ -85,7 +87,7 @@ $(document).ready(function() {
     });
     // sliders end
 
-    ScrollReveal().reveal('.section-header, .category__item, .about, .advantages__item, .slider-cards__item, .cards-slider__item', {
+    ScrollReveal().reveal('.section-header, .category__item, .about, .advantages__item', {
         scale: 1,
         duration: 1200,
         interval: 50,
@@ -96,7 +98,7 @@ $(document).ready(function() {
 
 
     ScrollReveal
-    ScrollReveal().reveal(' .category__bg, .reviews', {
+    ScrollReveal().reveal(' .category__bg, .reviews, .slider-cards', {
         scale: 1,
         duration: 1200,
         interval: 80,
