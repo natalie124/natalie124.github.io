@@ -979,6 +979,7 @@ html {
     font-size: 14px;
   }
   .about .container {
+    position: relative;
     background-color: inherit;
   }
 }
