@@ -1384,12 +1384,15 @@ html {
   height: 212px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  z-index: 0;
   -webkit-transition: -webkit-transform 0.3s linear;
   transition: -webkit-transform 0.3s linear;
   transition: transform 0.3s linear;
   transition: transform 0.3s linear, -webkit-transform 0.3s linear;
   will-change: transform;
+}
+
+.category__slider .swiper-slide-active {
+  z-index: 99;
 }
 
 @media (max-width: 1460px) {
@@ -1438,8 +1441,6 @@ html {
 }
 
 .category__pagination .swiper-pagination-bullet-active {
-  position: relative;
-  z-index: 100;
   background-color: #78c300;
 }
 
