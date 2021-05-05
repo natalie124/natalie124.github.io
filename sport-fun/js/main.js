@@ -22,6 +22,7 @@ $(document).ready(function() {
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
             lazy: true,
+            preloadImages: true,
             navigation: {
                 nextEl: $(this).find('.category__nav--next')[0],
                 prevEl: $(this).find('.category__nav--prev')[0],
