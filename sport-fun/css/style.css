@@ -1736,6 +1736,9 @@ html {
 
 .footer__container a {
   position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   color: #000000;
   text-decoration: none;
 }
