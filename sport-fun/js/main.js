@@ -1,13 +1,11 @@
 'use strict';
 $(document).ready(function() {
     // scroll to anchor start
-    $('._anchor-link').click(function(e) {
-        e.preventDefault();
-        var _href = $(this).attr('href');
-        var selector = '._anchor[data-anchor=' + _href.substr(1) + ']';
-        var toElem = $(selector);
-        var toTop = toElem.offset().top;
-        $("html, body").animate({ scrollTop: toTop });
+    var $page = $('html, body');
+    $('a[href*="#"]').click(function() {
+        $page.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 400);
         return false;
     });
 
@@ -37,6 +35,7 @@ $(document).ready(function() {
                     slidesPerGroup: 3,
                 },
                 1400: {
+                    spaceBetween: 5,
                     slidesPerView: 4,
                     slidesPerGroup: 4,
                 },
@@ -52,10 +51,10 @@ $(document).ready(function() {
         }
     });
 
-    $(document).click(function (e){
+    $(document).click(function(e) {
         var el = $(".menu__item--submenu");
-        if (!el.is(e.target)
-            && el.has(e.target).length === 0) {
+        if (!el.is(e.target) &&
+            el.has(e.target).length === 0) {
             $('.submenu').slideUp(200);
         }
     });
@@ -71,6 +70,25 @@ $(document).ready(function() {
         });
     }
     // submenu end
+
+    //masks
+    function phoneMask(input) {
+        var mask = IMask(input, {
+            mask: '+{7}(000)000-00-00',
+            minLength: 11
+        });
+    }
+
+    function addInputMask() {
+        var inputsTel = document.querySelectorAll('input[type=tel]');
+        if (inputsTel) {
+            inputsTel.forEach(function(inputTel) {
+                phoneMask(inputTel);
+            });
+        }
+    }
+
+    addInputMask();
 
     ScrollReveal().reveal('.about__description h2, .about__description p, .category__name, .category__header p, .category__header h2, .category__title', {
         scale: 1,
